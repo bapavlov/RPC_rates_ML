@@ -87,10 +87,10 @@ y=df_rates['RPC1']
 
 if fit is True :
     results=smf.ols('RPC1 ~ RPC2 + RPC3 + RPC4', df_rates).fit()
-    results.save("Run_305814_YB0_S7_RPC1_results.pickle")
+    results.save("model.pickle")
 else :
     from statsmodels.regression.linear_model import OLSResults
-    results = OLSResults.load("Run_305814_YB0_S7_RPC1_results.pickle")
+    results = OLSResults.load("model.pickle")
 
 print(results.summary())
 res=results.predict(X)
